@@ -27,7 +27,9 @@ def sprite():
 	print("   '-__________-' ")
 
 def sprite_eat():
-	pass
+	f = open('sprite_eat.txt', 'r')
+	f.read()
+	
 
 class Tamago:
 	def __init__(self, nome='Tamago', fome=False, energia=100):
@@ -55,20 +57,27 @@ class Tamago:
 	
 	#atividades fisicas
 	def descansar(self):
-		self.energia = self.energia + 50
-		self.status()
-		sono()
-		print("{} descansou.".format(self.nome))
-		print(self.energia)
+		if self.energia < 80:
+			self.energia = self.energia + 20
+			self.status()
+			sono()
+			print("{} descansou.".format(self.nome))
+			print(self.energia)
+		else:
+			print("Já está descansado!")
+
 	def ativ(self):
 		self.energia = self.energia - 35
 		self.fome = True
 		#self.status()	
-	def alimentar(self):	
-		self.fome = self.fome
-		self.fome = False
-		self.energia = self.energia + 25
-		sprite_eat()
+	def alimentar(self):
+		if self.fome == True:	
+			self.fome = self.fome
+			self.fome = False
+			self.energia = self.energia + 25
+			sprite_eat()
+		else:
+			print("Sem fome")
 		
 
 	def interagir(self):

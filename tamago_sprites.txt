@@ -3,9 +3,9 @@
     |  |   \|  \
     | /      \  |
     /          \|
-  /    | . |     |
- |    _______ _   |
- \. /          \ ./
+  /    |  |     |
+ |    _____ _    |
+ \.              /
    ´-__________-´
 
 Kayque lembre de criar email profissional, você agora é um programador, 
@@ -31,19 +31,8 @@ e criar uma conta no instagram tambem, e poste o tamagotchi no github!!!!!!
 
 
                             
-      _                   
-   __|__            
-  |     |           
-  |     |         
-   `---´     
-
-      
-      | |
-   ___|_|____
-  |__________|
-   |        |
-   |        |
-   |        |
-   |        |
-   |________|
-     
+      _
+   __|__ 
+  |     |
+  |     |
+   `---´ 
