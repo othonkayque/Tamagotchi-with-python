@@ -21,10 +21,21 @@ def sprite():
 	print("    | \|   \|  \ ")
 	print("    | /      \  |")
 	print("    /          \|")
-	print("  /    |. |     |")
-	print(" |    _______ _   |")
-	print(" \. /          \ ./")
+	print("  /    |  |     |")
+	print(" |    _____ _    |")
+	print(" \.              ./")
 	print("   '-__________-' ")
+
+def sprite_eat():
+	print("			       		  . ")
+	print("		_	     		_ \ \   .")
+	print("	 __|__		   		| \|   \|  \ ")
+	print("	|	  |	    		| /      \  |")
+	print("	|	  |	    		/          \|")
+	print("	|_____|  		  /    |  |     |")
+	print("			 		 |    _____ _    |")
+	print("			 		 \.              ./")
+	print("					   '-__________-' ")
 
 class Tamago:
 	def __init__(self, nome='Tamago', fome=False, energia=100):
