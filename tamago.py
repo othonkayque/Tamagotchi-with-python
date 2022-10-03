@@ -23,19 +23,11 @@ def sprite():
 	print("    /          \|")
 	print("  /    |  |     |")
 	print(" |    _____ _    |")
-	print(" \.              ./")
+	print(" \.              /")
 	print("   '-__________-' ")
 
 def sprite_eat():
-	print("			       		  . ")
-	print("		_	     		_ \ \   .")
-	print("	 __|__		   		| \|   \|  \ ")
-	print("	|	  |	    		| /      \  |")
-	print("	|	  |	    		/          \|")
-	print("	|_____|  		  /    |  |     |")
-	print("			 		 |    _____ _    |")
-	print("			 		 \.              ./")
-	print("					   '-__________-' ")
+	pass
 
 class Tamago:
 	def __init__(self, nome='Tamago', fome=False, energia=100):
@@ -76,6 +68,7 @@ class Tamago:
 		self.fome = self.fome
 		self.fome = False
 		self.energia = self.energia + 25
+		sprite_eat()
 		
 
 	def interagir(self):
