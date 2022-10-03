@@ -1,34 +1,44 @@
 import time, os, sys
 #animação sono
 def sono():
-	x = 1
+	x = 0
 	while x < 5:
+		f = open('sprite_sleep.txt','r')
+		text = f.read()
+		print(text)
+		f.close()
+		time.sleep(0.5)
+		os.system('cls')
+		f = open('sprite_sleep - 2.txt','r')
+		text = f.read()
+		print(text)
+		f.close()
+		time.sleep(0.5)
 		os.system('cls')
 		x = x + 1
-		print("z")
-		time.sleep(1)
-		os.system('cls')
-		print("zZ")
-		time.sleep(1)
-		os.system('cls')
-		print("zzZ")
-		time.sleep(1)
-		os.system('cls')
 
 def sprite():
-	print("       . ")
-	print("     _ \ \   .")
-	print("    | \|   \|  \ ")
-	print("    | /      \  |")
-	print("    /          \|")
-	print("  /    |  |     |")
-	print(" |    _____ _    |")
-	print(" \.              /")
-	print("   '-__________-' ")
+	f = open('sprite_base.txt','r+')
+	sprite_base = f.read()
+	print(sprite_base)
+	f.close()
 
 def sprite_eat():
-	f = open('sprite_eat.txt', 'r')
-	f.read()
+	x=0
+	while x < 2:
+		f = open('sprite_eat.txt', 'r')
+		sprite_eat = f.read()
+		print(sprite_eat)
+		time.sleep(0.7)
+		f.close()
+		os.system('cls')
+		f = open('sprite_eat - 2.txt', 'r')
+		sprite_eat = f.read()
+		print(sprite_eat)
+		time.sleep(0.7)
+		f.close()
+		os.system('cls')
+		x = x + 1
 	
 
 class Tamago:
@@ -64,7 +74,7 @@ class Tamago:
 			print("{} descansou.".format(self.nome))
 			print(self.energia)
 		else:
-			print("Já está descansado!")
+			print("\nJá está descansado!")
 
 	def ativ(self):
 		self.energia = self.energia - 35
@@ -77,7 +87,7 @@ class Tamago:
 			self.energia = self.energia + 25
 			sprite_eat()
 		else:
-			print("Sem fome")
+			print("\nSem fome")
 		
 
 	def interagir(self):
