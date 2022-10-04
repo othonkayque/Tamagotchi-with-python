@@ -88,6 +88,11 @@ def sprite_brincar():
 		f.close()
 		x = x + 1
 
+def sprite_die():
+	f = open('sprite_die/sprite_die.txt', 'r')
+	text = f.read()
+	print(text)
+
 class Tamago:
 	def __init__(self, nome='Tamago', fome=True, energia=70, life=True):
 		self.nome = nome
@@ -96,6 +101,8 @@ class Tamago:
 		self.life = life
 
 	def status(self):
+		os.system('cls')
+		print(pyfiglet.figlet_format('{}'.format(self.nome)))
 		sprite()
 		if self.fome == True:
 			statusfome = "Com fome"
@@ -159,6 +166,7 @@ class Tamago:
 			self.interagir()
 		elif self.life == False:
 			print(pyfiglet.figlet_format("You  Die"))
+			sprite_die()
 			resp = input("Gostaria de reiniciar? ")
 			if resp == 's':
 				os.system('cls')
