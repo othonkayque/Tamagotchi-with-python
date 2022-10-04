@@ -3,13 +3,13 @@ import time, os, sys
 def sono():
 	x = 0
 	while x < 5:
-		f = open('sprite_sleep.txt','r')
+		f = open('sprite_sleep/sprite_sleep.txt','r')
 		text = f.read()
 		print(text)
 		f.close()
 		time.sleep(0.5)
 		os.system('cls')
-		f = open('sprite_sleep - 2.txt','r')
+		f = open('sprite_sleep/sprite_sleep - 2.txt','r')
 		text = f.read()
 		print(text)
 		f.close()
@@ -18,7 +18,7 @@ def sono():
 		x = x + 1
 
 def sprite():
-	f = open('sprite_base.txt','r+')
+	f = open('sprite_base/sprite_base.txt','r+')
 	sprite_base = f.read()
 	print(sprite_base)
 	f.close()
@@ -26,13 +26,13 @@ def sprite():
 def sprite_eat():
 	x=0
 	while x < 2:
-		f = open('sprite_eat.txt', 'r')
+		f = open('sprite_eat/sprite_eat.txt', 'r')
 		sprite_eat = f.read()
 		print(sprite_eat)
 		time.sleep(0.7)
 		f.close()
 		os.system('cls')
-		f = open('sprite_eat - 2.txt', 'r')
+		f = open('sprite_eat/sprite_eat - 2.txt', 'r')
 		sprite_eat = f.read()
 		print(sprite_eat)
 		time.sleep(0.7)
@@ -40,18 +40,16 @@ def sprite_eat():
 		os.system('cls')
 		x = x + 1
 	
-
 class Tamago:
-	def __init__(self, nome='Tamago', fome=False, energia=100):
+	def __init__(self, nome='Tamago', fome=False, energia=100, life=True):
 		self.nome = nome
 		self.fome = fome
 		self.energia = energia
+		self.life = life
 
 	def status(self):
 		sprite()
 		print("Tamago: {} ~ Fome: {} ~ Energia: {}".format(self.nome, self.fome, self.energia,))
-		if self.energia == 0:
-			print("Você morreu")
 
 	def decidir_atividade(self):	
 		if self.energia >= 55:
@@ -64,6 +62,15 @@ class Tamago:
 				self.descansar()
 		else:
 			print("Sem energia")
+			respcan = input("Brincar com tamago mesmo assim? ")
+			if respcan == 's' and self.fome == True:
+				x = 0
+				while x < 2:
+					x = x + 1
+					print("Você morreu")
+					self.life = False
+					break
+			
 	
 	#atividades fisicas
 	def descansar(self):
@@ -103,8 +110,24 @@ class Tamago:
 			os.system('cls')
 			self.alimentar()
 			
+	def decisao(self):
+		if self.life == True:
+			self.interagir()
+		elif self.life == False:
+			print("Você Morreu :(")
+			resp = input("Gostaria de reiniciar? ")
+			if resp == 's':
+				self.life = True
+				self.energia = 100
+				self.fome = False
+				self.interagir()
+			else:
+				exit()
+			
+
+
 
 Nee = Tamago('Nee')
+#while True:
 while True:
-	Nee.interagir()
-
+	Nee.decisao()
